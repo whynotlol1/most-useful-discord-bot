@@ -18,6 +18,9 @@ conn.commit()
 intents = discord.Intents.default()
 intents.message_content = True
 
+with open("loli_gifs.txt", "r") as f:
+    gifs = [el[:-1] for el in f.readlines()]
+
 client = discord.Client(intents=intents)
 
 
@@ -60,6 +63,7 @@ async def on_message(message):
                 await message.channel.send(f'{message.author.mention}, you got {amount_delta} new lolis!')
             else:
                 await message.channel.send(f'{message.author.mention}, you cannot get new lolis yet!')
+            await message.channel.send(random.choice(gifs))
         case '!my_lolis':
             check = cur.execute("SELECT * FROM users WHERE user=?", (message.author.name,)).fetchone()
             if check is None:
@@ -79,4 +83,4 @@ async def on_message(message):
                 embed.add_field(name=f'{i + 1}. {top[i][0]}: {top[i][1]} lolis', value='', inline=False)
             await message.channel.send(embed=embed)
 
-client.run('your-token-here')
+client.run('MTE4MDU1ODgxMzE3MTAyMzg3Mg.GdwHyS.OuzsFGAGPXKyZS0iSl9pTF1Qw0P5-1ouQ3O6l8')
