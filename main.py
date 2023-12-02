@@ -83,4 +83,4 @@ async def on_message(message):
                 embed.add_field(name=f'{i + 1}. {top[i][0]}: {top[i][1]} lolis', value='', inline=False)
             await message.channel.send(embed=embed)
 
-client.run('MTE4MDU1ODgxMzE3MTAyMzg3Mg.GdwHyS.OuzsFGAGPXKyZS0iSl9pTF1Qw0P5-1ouQ3O6l8')
+client.run('')
