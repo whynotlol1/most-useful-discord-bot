@@ -45,7 +45,7 @@ async def on_ready():
 async def on_message(message):
     match message.content.split(" ")[0]:
         case '!help':
-            await message.channel.send("Welcome to the loli bot! Here's the list of commands:\n\n`!loli` - get new lolis (every 12 hours)\n\n`!my_lolis` - see how many lolis you have\n\n`!top` - see the top 10 users with most lolis")
+            await message.channel.send("Welcome to the loli bot! Here's the list of commands:\n\n`!loli` - get new lolis (every 12 hours)\n\n`!my_lolis` - see how many lolis you have\n\n`!top` - see the top 10 users with most lolis\n\nIdea by: Valpik; Bot by: cat dev")
         case '!loli':
             now = int(time.time())
             amount_delta = epic_random()
@@ -62,7 +62,7 @@ async def on_message(message):
                 conn.commit()
                 await message.channel.send(f'{message.author.mention}, you got {amount_delta} new lolis!')
             else:
-                await message.channel.send(f'{message.author.mention}, you cannot get new lolis yet!')
+                await message.channel.send(f"{message.author.mention}, you can't get new lolis yet!")
             await message.channel.send(random.choice(gifs))
         case '!my_lolis':
             check = cur.execute("SELECT * FROM users WHERE user=?", (message.author.name,)).fetchone()
@@ -83,4 +83,4 @@ async def on_message(message):
                 embed.add_field(name=f'{i + 1}. {top[i][0]}: {top[i][1]} lolis', value='', inline=False)
             await message.channel.send(embed=embed)
 
-client.run('')
+client.run('idi nahuy')
