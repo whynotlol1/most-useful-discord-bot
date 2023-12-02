@@ -1,2 +1,3 @@
 # most-useful-discord-bot
-EXACTLY WHAT IT SAYS
+Idea by: [Valpik](https://github.com/Valpik97)
+Bot by: [cat dev](https://github.com/whynotlol1)
