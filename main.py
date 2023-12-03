@@ -71,7 +71,7 @@ async def on_message(message):
                 cur.execute("INSERT INTO users VALUES (?,?,?)", (message.author.name, 0, 0))
             else:
                 amount = check[1]
-            await message.channel.send(f"{message.author.mention}, you've got {amount} lolis")
+            await message.channel.send(f"{message.author.mention}, you've got {amount} lolis!")
         case '!top':
             top = cur.execute("SELECT * FROM users ORDER BY lolis DESC").fetchall()
             embed = discord.Embed(title='Top 10 users with most lolis:', colour=discord.Colour.from_rgb(30, 230, 30))
