@@ -68,7 +68,7 @@ async def on_message(message):
             check = cur.execute("SELECT * FROM users WHERE user=?", (message.author.name,)).fetchone()
             if check is None:
                 amount = 0
-                cur.execute("INSERT INTO users VALUES (?,?,?)", (message.author.name, 0, int(time.time())))
+                cur.execute("INSERT INTO users VALUES (?,?,?)", (message.author.name, 0, 0))
             else:
                 amount = check[1]
             await message.channel.send(f"{message.author.mention}, you've got {amount} lolis")
